@@ -11,46 +11,46 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
+        debugShowCheckedModeBanner: false, // Menonaktifkan banner debug
+        home: Scaffold( // Scaffold adalah struktur dasar untuk layout
           appBar: AppBar(
-            title: Text('item service coffe'),
+            title: Text('item service coffe'), // Menampilkan judul aplikasi di AppBar
           ),
-          body: ListView(
-            padding: EdgeInsets.all(16),
+          body: ListView( //Listview digunakan untuk membuat list secara urut
+            padding: EdgeInsets.all(16), // Menambahkan padding di sekitar ListView
             children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(40.0, 30.0, 40.0, 60.0),
+              Container( // Container adalah wadah untuk menampung widget
+                padding: EdgeInsets.fromLTRB(40.0, 30.0, 40.0, 60.0), 
                 decoration: BoxDecoration(
                     color: Colors.brown[50],
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20.0),
-                      topRight: Radius.circular(20.0),
-                      bottomLeft: Radius.circular(180.0),
-                      bottomRight: Radius.circular(180.0),
+                      topLeft: Radius.circular(20.0), // Membuat sudut kiri atas melengkung
+                      topRight: Radius.circular(20.0), // Membuat sudut kanan atas melengkung
+                      bottomLeft: Radius.circular(180.0), //Membuat sudut kiri bawah melengkung lebih besar
+                      bottomRight: Radius.circular(180.0), // Membuat sudut kanan bawah melengkung lebih besar
                     ),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.brown,
-                        blurRadius: (6.0),
-                        offset: (Offset(1.0, 3.0)),
+                        blurRadius: (6.0), // Mengatur seberapa kabur bayangan
+                        offset: (Offset(1.0, 3.0)), // Mengatur posisi bayangan
                       )
                     ]),
                 child: Column(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(100),
+                    ClipRRect( // ClipRRect digunakan untuk memotong gambar dengan sudut melengkung
+                      borderRadius: BorderRadius.circular(100), // Memotong gambar dengan radius besar untuk menghasilkan bentuk lingkaran
                       child: Image.asset(
                         'asset/coffee.jpg',
-                        fit: BoxFit.cover,
+                        fit: BoxFit.cover, // Mengatur gambar agar menutupi seluruh area dengan proporsional
                         height: 100.0,
                         width: 100.0,
                       ),
                     ),
                     SizedBox(
-                      height: 16.0,
+                      height: 16.0, // Menggatur jarak tinggi untuk gambar dan teks
                     ),
-                    Text(
+                    Text( // Menampilkan teks judul produk
                       "Caffè Latte",
                       style: TextStyle(
                         fontSize: 18.0,
@@ -59,41 +59,42 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 16.0,
+                      height: 16.0, // Menggatur jarak tinggi untuk judul dan deskripsi
                     ),
-                    Text(
+                    // Menampilkan deskripsi produk
+                    Text( 
                         "A caffè latte is simply a shot or two of bold, tasty espresso with fresh, sweet steamed milk over it.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 12.0,
                         )),
                     const SizedBox(
-                      height: 30.0,
+                      height: 30.0, // Menggatur jarak tinggi untuk deskripsi dan tombol
                     ),
-                    TextButton(
-                      onPressed: () {
-                        print('Explore More');
+                    TextButton( // Tombol dengan teks yang bisa ditekan untuk aksi
+                      onPressed: () { // Fungsi yang dijalankan saat tombol ditekan
+                        print('Explore More'); // Menampilkan pesan di console saat tombol ditekan
                       },
-                      style: ButtonStyle(
+                      style: ButtonStyle( // Menyesuaikan gaya tombol
                           padding: WidgetStateProperty.resolveWith((states) {
-                        return const EdgeInsets.symmetric(
-                          horizontal: 30.0,
-                          vertical: 16.0,
+                        return const EdgeInsets.symmetric( // Menambahkan padding pada tombol
+                          horizontal: 30.0, // Padding horizontal
+                          vertical: 16.0, // Padding vertikal
                         );
-                      }), backgroundColor:
+                      }), backgroundColor: // Mengatur warna latar belakang tombol
                               WidgetStateProperty.resolveWith((states) {
                         return Colors.brown[700];
-                      }), foregroundColor:
+                      }), foregroundColor: // Mengatur warna teks tombol
                               WidgetStateProperty.resolveWith((states) {
                         return Colors.white;
-                      }), shape: WidgetStateProperty.resolveWith(
+                      }), shape: WidgetStateProperty.resolveWith( // Membuat tombol dengan sudut melengkung
                         (states) {
                           return RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
+                            borderRadius: BorderRadius.circular(30), // Menentukan kelengkungan sudut tombol
                           );
                         },
                       )),
-                      child: const Text('Explore Now'),
+                      child: const Text('Explore Now'), // Menentukan kelengkungan sudut tombol
                     ),
                   ],
                 ),
